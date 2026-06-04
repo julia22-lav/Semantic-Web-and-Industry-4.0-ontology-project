@@ -1,0 +1,1 @@
+{"Collections":[{"sheetName":"Tabelle1","startColumn":"A","endColumn":"G","startRow":"2","endRow":"+","comment":"","rule":"Individual: @A*\nTypes: \u0027Pressure Observation\u0027\nFacts: \u0027made by sensor\u0027 @C*,\n\u0027has simple result\u0027 @E*(xsd:float),\n\u0027result time\u0027 \r\n@F*(xsd:dateTime),\nobservedDuring @G*","active":true}]}

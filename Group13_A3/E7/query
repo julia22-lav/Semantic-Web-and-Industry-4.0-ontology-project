@@ -1,0 +1,32 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX :     <http://iot.uni-trier.de/FTOnto#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+
+SELECT ?instance ?stime ?etime
+WHERE {
+  # executions of the specific VGR service
+  ?instance rdf:type :ServiceExecution .
+  ?instance :executesService
+            :Service_VGR_Pick_Up_And_Transport_With_Machine_VGR_1_With_Start_Sink_2_With_End_Waiting_Platform .
+  ?instance :startTime ?stime .
+  ?instance :endTime   ?etime .
+
+  # exclude executions that DO have LB3 interrupted = true/1
+  MINUS {
+    ?observation rdf:type :Light_Barrier_Observation ;
+                 :observedDuring ?instance ;
+                 sosa:madeBySensor :HBW_1_Light_Barrier_3 ;
+                 sosa:hasSimpleResult ?val .
+
+    FILTER (
+      xsd:integer(?val) = 1 ||
+      xsd:decimal(?val) = 1.0 ||
+      lcase(str(?val))  = "true" ||
+      ?val = "true"^^xsd:boolean
+    )
+  }
+}
+ORDER BY ?instance
+

@@ -1,0 +1,12 @@
+{
+  "semTech:characteristicsComment": {
+    "rdfs:label": "characteristicsComment",
+    "rdfs:comment": "Use to explain chosen property characteristics."
+  },
+  "semTech:ExampleAnnotationProperty": {
+    "rdfs:label": "ExampleAnnotationProperty",
+    "rdfs:comment": "This is an exemplary annotation property.",
+    "domain": "semTech:ExampleObjectProperty",
+    "range": "xsd:string"
+  }
+}

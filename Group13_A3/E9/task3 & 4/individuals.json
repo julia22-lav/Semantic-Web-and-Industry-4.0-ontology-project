@@ -1,0 +1,36 @@
+{
+  "semTech:HS_13": {
+    "class": "semTech:LectureHall",
+    "rdfs:label": "HS 13",
+    "dataProperties": {
+      "semTech:hasSquareMeterage": 126.71
+    },
+    "objectProperties": {
+      "semTech:isUsedFor": "semTech:SemanticTechnologies"
+    }
+  },
+  "semTech:ExampleIndividual": {
+    "class": "semTech:ExampleClass",
+    "rdfs:label": "ExampleIndividual",
+    "dataProperties": {
+      "semTech:ExampleDataProperty": 5
+    },
+    "objectProperties": {
+      "semTech:ExampleObjectProperty": "semTech:ExampleIndividual"
+    }
+  },
+  "semTech:RalphBergmann": {
+    "class": "semTech:Teacher",
+    "rdfs:label": "Ralph Bergmann",
+    "objectProperties": {
+      "semTech:teaches": "semTech:SemanticTechnologies"
+    }
+  },
+  "semTech:SemanticTechnologies": {
+    "class": "semTech:Lecture",
+    "rdfs:label": "Semantic Technologies",
+    "objectProperties": {
+      "semTech:heldIn": "semTech:HS_13"
+    }
+  }
+}

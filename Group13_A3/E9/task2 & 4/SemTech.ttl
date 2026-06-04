@@ -1,0 +1,204 @@
+@prеfix : <http://uni-trier.de/semantic-technologies#> .
+@prеfix оwl: <http://www.w3.org/2002/07/owl#> .
+@prеfix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prеfix xml: <http://www.w3.org/XML/1998/namespace> .
+@prеfix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prеfix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prеfix terms: <http://purl.org/dc/terms/> .
+@prеfix semTech: <http://uni-trier.de/semantic-technologies#> .
+@base <http://uni-trier.de/semantic-technologies#> .
+
+<http://uni-trier.de/semantic-technologies> rdf:type owl:Ontology ;
+                                             terms:created "2025-05-08" ;
+                                             terms:license "copyright 2019-2023 - department for Business Information Systems II - University of Trier" ;
+                                             terms:right "david Jilg" ;
+                                             terms:title "Semantic Technologies example Ontology" .
+
+#################################################################
+#    annotation properties
+#################################################################
+
+###  domain
+<domain> rdf:type owl:annotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+terms:created rdf:type owl:annotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:annotationProperty .
+
+
+###  http://purl.org/dc/terms/right
+terms:right rdf:type owl:annotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:annotationProperty .
+
+
+###  http://uni-trier.de/semantic-technologies#exampleannotationProperty
+semTech:exampleannotationProperty rdf:type owl:annotationProperty ;
+                                  <domain> "semTech:exampleObjectProperty" ;
+                                  rdfs:comment "This is an exemplary annotation property." ;
+                                  rdfs:label "exampleannotationProperty" ;
+                                  rdfs:range xsd:string .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://uni-trier.de/semantic-technologies#exampleObjectProperty
+semTech:exampleObjectProperty rdf:type owl:ObjectProperty ;
+                              owl:inverseOf semTech:exampleObjectProperty2 ;
+                              rdf:type owl:FunctionalProperty ,
+                                       owl:SymmetricProperty ,
+                                       owl:TransitiveProperty ,
+                                       owl:ReflexiveProperty ;
+                              rdfs:domain semTech:exampleclass ;
+                              rdfs:range semTech:exampleclass ;
+                              rdfs:label "exampleObjectProperty" .
+
+
+###  http://uni-trier.de/semantic-technologies#exampleObjectProperty2
+semTech:exampleObjectProperty2 rdf:type owl:ObjectProperty ;
+                               rdfs:label "exampleObjectProperty2" .
+
+
+###  http://uni-trier.de/semantic-technologies#collaboratesWith
+semTech:collaboratesWith rdf:type owl:ObjectProperty ;
+                         rdfs:domain semTech:Institution ;
+                         rdfs:range semTech:Institution ;
+                         rdfs:label "collaboratesWith" .
+
+
+###  http://uni-trier.de/semantic-technologies#fatherOf
+semTech:fatherOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain semTech:Person ;
+                 rdfs:range semTech:Person ;
+                 rdfs:label "fatherOf" .
+
+
+###  http://uni-trier.de/semantic-technologies#knows
+semTech:knows rdf:type owl:ObjectProperty ;
+              rdfs:domain semTech:Person ;
+              rdfs:range semTech:Person ;
+              rdfs:label "knows" .
+
+
+###  http://uni-trier.de/semantic-technologies#largerThan
+semTech:largerThan rdf:type owl:ObjectProperty ;
+                   rdfs:domain semTech:Place ;
+                   rdfs:range semTech:Place ;
+                   rdfs:label "largerThan" .
+
+
+###  http://uni-trier.de/semantic-technologies#teaches
+semTech:teaches rdf:type owl:ObjectProperty ;
+                rdfs:domain semTech:Teacher ;
+                rdfs:range semTech:Lecture ;
+                rdfs:label "teaches" .
+
+
+#################################################################
+#    data properties
+#################################################################
+
+###  http://uni-trier.de/semantic-technologies#exampledataProperty
+semTech:exampledataProperty rdf:type owl:datatypeProperty ,
+                                     owl:FunctionalProperty ;
+                            rdfs:domain semTech:exampleclass ;
+                            rdfs:range xsd:integer ;
+                            rdfs:comment "This is an exemplary data property." ;
+                            rdfs:label "exampledataProperty" .
+
+
+#################################################################
+#    classes
+#################################################################
+
+###  http://uni-trier.de/semantic-technologies#exampleclass
+semTech:exampleclass rdf:type owl:class ;
+                     rdfs:label "exampleclass" .
+
+
+###  http://uni-trier.de/semantic-technologies#Institution
+semTech:Institution rdf:type owl:class ;
+                    rdfs:label "Institution" .
+
+
+###  http://uni-trier.de/semantic-technologies#Lecture
+semTech:Lecture rdf:type owl:class ;
+                rdfs:label "Lecture" .
+
+
+###  http://uni-trier.de/semantic-technologies#Person
+semTech:Person rdf:type owl:class ;
+               rdfs:label "Person" .
+
+
+###  http://uni-trier.de/semantic-technologies#Place
+semTech:Place rdf:type owl:class ;
+              rdfs:label "Place" .
+
+
+###  http://uni-trier.de/semantic-technologies#Teacher
+semTech:Teacher rdf:type owl:class ;
+                rdfs:subclassOf semTech:Person ;
+                rdfs:label "Teacher" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://uni-trier.de/semantic-technologies#exampleIndividual
+semTech:exampleIndividual rdf:type owl:NamedIndividual ,
+                                   semTech:exampleclass ;
+                          semTech:exampleObjectProperty semTech:exampleIndividual ;
+                          semTech:exampledataProperty 5 ;
+                          rdfs:label "exampleIndividual" .
+
+
+###  http://uni-trier.de/semantic-technologies#RalphBergmann
+semTech:RalphBergmann rdf:type owl:NamedIndividual ,
+                               semTech:Teacher ;
+                      semTech:teaches semTech:SemanticTechnologies ;
+                      rdfs:label "Ralph Bergmann" .
+
+
+###  http://uni-trier.de/semantic-technologies#SemanticTechnologies
+semTech:SemanticTechnologies rdf:type owl:NamedIndividual ,
+                                      semTech:Lecture ;
+                             rdfs:label "Semantic Technologies" .
+
+
+
+# 2a) Student subclass of Person
+semTech:Student a owl:Class ;
+  rdfs:subClassOf semTech:Person ;
+  # 2b) Student is disjoint with Teacher
+  owl:disjointWith semTech:Teacher .
+
+# 2c) takes: Student → Lecture
+semTech:takes a owl:ObjectProperty ;
+  rdfs:domain semTech:Student ;
+  rdfs:range  semTech:Lecture .
+
+# 2d) hasStudentNumber: Student → xsd:integer
+semTech:hasStudentNumber a owl:DatatypeProperty ;
+  rdfs:domain semTech:Student ;
+  rdfs:range  xsd:integer .
+
+# 2e) Example student individuals (duplicate one block per group member)
+# Replace names and numbers with the real ones used by your group.
+semTech:Abeel_Ishrat a semTech:Student ;
+  semTech:hasStudentNumber 1804364 ;
+  semTech:takes semTech:SemanticTechnologies .
+
+# Example for another member
+semTech:Iuliia_Lavrenko a semTech:Student ;
+  semTech:hasStudentNumber 1744290 ;
+  semTech:takes semTech:SemanticTechnologies .

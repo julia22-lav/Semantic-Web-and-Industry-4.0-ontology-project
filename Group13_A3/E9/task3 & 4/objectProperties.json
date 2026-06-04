@@ -1,0 +1,69 @@
+{
+  "semTech:heldIn": {
+    "rdfs:label": "heldIn",
+    "domain": "semTech:Lecture",
+    "range": "semTech:LectureHall",
+    "inverseOf": "semTech:isUsedFor",
+    "functional": true,
+    "characteristicsComment": "Each lecture occurrence has one room."
+  },
+  "semTech:isUsedFor": {
+    "rdfs:label": "isUsedFor",
+    "domain": "semTech:LectureHall",
+    "range": "semTech:Lecture",
+    "inverseOf": "semTech:heldIn"
+  },
+  "semTech:ExampleObjectProperty": {
+    "rdfs:label": "ExampleObjectProperty",
+    "domain": "semTech:ExampleClass",
+    "range": "semTech:ExampleClass",
+    "inverseOf": "semTech:ExampleObjectProperty2",
+    "functional": true,
+    "inverseFunctional": false,
+    "symmetric": true,
+    "asymmetric": false,
+    "transitive": true,
+    "reflexive": true,
+    "irreflexive": false
+  },
+  "semTech:ExampleObjectProperty2": {
+    "rdfs:label": "ExampleObjectProperty2"
+  },
+  "semTech:collaboratesWith": {
+    "rdfs:label": "collaboratesWith",
+    "domain": "semTech:Institution",
+    "range": "semTech:Institution",
+    "symmetric": true,
+    "characteristicsComment": "Collaboration is mutual."
+  },
+  "semTech:knows": {
+    "rdfs:label": "knows",
+    "domain": "semTech:Person",
+    "range": "semTech:Person",
+    "reflexive": true,
+    "symmetric": true,
+    "characteristicsComment": "Everyone knows themself"
+  },
+  "semTech:fatherOf": {
+    "rdfs:label": "fatherOf",
+    "domain": "semTech:Person",
+    "range": "semTech:Person",
+    "asymmetric": true,
+    "irreflexive": true,
+    "inverseFunctional": true,
+    "characteristicsComment": "No self-fathering, if two different people father the same child, they must be the same person."
+  },
+  "semTech:teaches": {
+    "rdfs:label": "teaches",
+    "domain": "semTech:Teacher",
+    "range": "semTech:Lecture",
+    "characteristicsComment": "Inverse pair only with isTaughtBy, no additional characteristics."
+  },
+  "semTech:largerThan": {
+    "rdfs:label": "largerThan",
+    "domain": "semTech:Place",
+    "range": "semTech:Place",
+    "transitive": true,
+    "characteristicsComment": "Transitive only."
+  }
+}

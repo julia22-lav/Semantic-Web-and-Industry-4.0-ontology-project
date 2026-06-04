@@ -1,0 +1,35 @@
+{
+  "semTech:hasStudentNumber": {
+    "rdfs:label": "hasStudentNumber",
+    "domain": [
+      "semTech:Student"
+    ],
+    "range": [
+      "xsd:integer"
+    ],
+    "functional": true,
+    "rdfs:comment": "Each student has exactly one official student number."
+  },
+  "semTech:hasSquareMeterage": {
+    "rdfs:label": "hasSquareMeterage",
+    "domain": [
+      "semTech:LectureHall"
+    ],
+    "range": [
+      "xsd:float"
+    ],
+    "functional": true,
+    "rdfs:comment": "One area value per hall."
+  },
+  "semTech:ExampleDataProperty": {
+    "rdfs:label": "ExampleDataProperty",
+    "rdfs:comment": "This is an exemplary data property.",
+    "domain": [
+      "semTech:ExampleClass"
+    ],
+    "range": [
+      "xsd:integer"
+    ],
+    "functional": true
+  }
+}

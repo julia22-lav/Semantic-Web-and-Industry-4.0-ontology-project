@@ -1,0 +1,25 @@
+{
+  "semTech:LectureHall": {
+    "rdfs:label": "LectureHall"
+  },
+  "semTech:ExampleClass": {
+    "rdfs:label": "ExampleClass"
+  },
+  "semTech:Institution": {
+    "rdfs:label": "Institution"
+  },
+  "semTech:Person": {
+    "rdfs:label": "Person",
+    "subClasses": "semTech:Teacher"
+  },
+  "semTech:Teacher": {
+    "rdfs:label": "Teacher"
+  },
+  "semTech:Lecture": {
+    "rdfs:label": "Lecture"
+  },
+  "semTech:Place": {
+    "rdfs:label": "Place",
+    "subClasses": "semTech:LectureHall"
+  }
+}

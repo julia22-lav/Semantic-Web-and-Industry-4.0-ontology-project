@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://uni-trier.de/semantic-technologies#"
+     xml:base="http://uni-trier.de/semantic-technologies"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:semTech="http://uni-trier.de/semantic-technologies#"
+     xmlns:uni-trier="http://uni-trier.de/">
+    <owl:Ontology rdf:about="http://uni-trier.de/semantic-technologies">
+        <terms:created>2025-05-08</terms:created>
+        <terms:license>Copyright 2019-2023 - Department for Business Information Systems II - University of Trier</terms:license>
+        <terms:right>David Jilg</terms:right>
+        <terms:title>Semantic Technologies Example Ontology</terms:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/right -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/right"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://uni-trier.de/domain -->
+
+    <owl:AnnotationProperty rdf:about="http://uni-trier.de/domain"/>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#ExampleAnnotationProperty -->
+
+    <owl:AnnotationProperty rdf:about="http://uni-trier.de/semantic-technologies#ExampleAnnotationProperty">
+        <domain>semTech:ExampleObjectProperty</domain>
+        <rdfs:comment>This is an exemplary annotation property.</rdfs:comment>
+        <rdfs:label>ExampleAnnotationProperty</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#domain -->
+
+    <owl:AnnotationProperty rdf:about="http://uni-trier.de/semantic-technologies#domain"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#ExampleObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://uni-trier.de/semantic-technologies#ExampleObjectProperty">
+        <owl:inverseOf rdf:resource="http://uni-trier.de/semantic-technologies#ExampleObjectProperty2"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uni-trier.de/semantic-technologies#ExampleClass"/>
+        <rdfs:range rdf:resource="http://uni-trier.de/semantic-technologies#ExampleClass"/>
+        <rdfs:label>ExampleObjectProperty</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#ExampleObjectProperty2 -->
+
+    <owl:ObjectProperty rdf:about="http://uni-trier.de/semantic-technologies#ExampleObjectProperty2">
+        <rdfs:label>ExampleObjectProperty2</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#collaboratesWith -->
+
+    <owl:ObjectProperty rdf:about="http://uni-trier.de/semantic-technologies#collaboratesWith">
+        <rdfs:domain rdf:resource="http://uni-trier.de/semantic-technologies#Institution"/>
+        <rdfs:range rdf:resource="http://uni-trier.de/semantic-technologies#Institution"/>
+        <rdfs:label>collaboratesWith</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#employs -->
+
+    <owl:ObjectProperty rdf:about="http://uni-trier.de/semantic-technologies#employs">
+        <rdfs:domain rdf:resource="http://uni-trier.de/semantic-technologies#University"/>
+        <rdfs:range rdf:resource="http://uni-trier.de/semantic-technologies#Teacher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#fatherOf -->
+
+    <owl:ObjectProperty rdf:about="http://uni-trier.de/semantic-technologies#fatherOf">
+        <rdfs:domain rdf:resource="http://uni-trier.de/semantic-technologies#Person"/>
+        <rdfs:range rdf:resource="http://uni-trier.de/semantic-technologies#Person"/>
+        <rdfs:label>fatherOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#isTaughtBy -->
+
+    <owl:ObjectProperty rdf:about="http://uni-trier.de/semantic-technologies#isTaughtBy">
+        <owl:inverseOf rdf:resource="http://uni-trier.de/semantic-technologies#teaches"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#knows -->
+
+    <owl:ObjectProperty rdf:about="http://uni-trier.de/semantic-technologies#knows">
+        <rdfs:domain rdf:resource="http://uni-trier.de/semantic-technologies#Person"/>
+        <rdfs:range rdf:resource="http://uni-trier.de/semantic-technologies#Person"/>
+        <rdfs:label>knows</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#largerThan -->
+
+    <owl:ObjectProperty rdf:about="http://uni-trier.de/semantic-technologies#largerThan">
+        <rdfs:domain rdf:resource="http://uni-trier.de/semantic-technologies#Place"/>
+        <rdfs:range rdf:resource="http://uni-trier.de/semantic-technologies#Place"/>
+        <rdfs:label>largerThan</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://uni-trier.de/semantic-technologies#teaches">
+        <rdfs:domain rdf:resource="http://uni-trier.de/semantic-technologies#Teacher"/>
+        <rdfs:range rdf:resource="http://uni-trier.de/semantic-technologies#Lecture"/>
+        <rdfs:label>teaches</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#ExampleDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://uni-trier.de/semantic-technologies#ExampleDataProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://uni-trier.de/semantic-technologies#ExampleClass"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This is an exemplary data property.</rdfs:comment>
+        <rdfs:label>ExampleDataProperty</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#isGovernmentAffiliated -->
+
+    <owl:DatatypeProperty rdf:about="http://uni-trier.de/semantic-technologies#isGovernmentAffiliated">
+        <rdfs:domain rdf:resource="http://uni-trier.de/semantic-technologies#University"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#ExampleClass -->
+
+    <owl:Class rdf:about="http://uni-trier.de/semantic-technologies#ExampleClass">
+        <rdfs:label>ExampleClass</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#Institution -->
+
+    <owl:Class rdf:about="http://uni-trier.de/semantic-technologies#Institution">
+        <rdfs:label>Institution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#Lecture -->
+
+    <owl:Class rdf:about="http://uni-trier.de/semantic-technologies#Lecture">
+        <rdfs:label>Lecture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#Person -->
+
+    <owl:Class rdf:about="http://uni-trier.de/semantic-technologies#Person">
+        <rdfs:label>Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#Place -->
+
+    <owl:Class rdf:about="http://uni-trier.de/semantic-technologies#Place">
+        <rdfs:label>Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#Teacher -->
+
+    <owl:Class rdf:about="http://uni-trier.de/semantic-technologies#Teacher">
+        <rdfs:subClassOf rdf:resource="http://uni-trier.de/semantic-technologies#Person"/>
+        <rdfs:label>Teacher</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#University -->
+
+    <owl:Class rdf:about="http://uni-trier.de/semantic-technologies#University">
+        <rdfs:subClassOf rdf:resource="http://uni-trier.de/semantic-technologies#Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#ExampleIndividual -->
+
+    <owl:NamedIndividual rdf:about="http://uni-trier.de/semantic-technologies#ExampleIndividual">
+        <rdf:type rdf:resource="http://uni-trier.de/semantic-technologies#ExampleClass"/>
+        <ExampleObjectProperty rdf:resource="http://uni-trier.de/semantic-technologies#ExampleIndividual"/>
+        <ExampleDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ExampleDataProperty>
+        <rdfs:label>ExampleIndividual</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#RalphBergmann -->
+
+    <owl:NamedIndividual rdf:about="http://uni-trier.de/semantic-technologies#RalphBergmann">
+        <rdf:type rdf:resource="http://uni-trier.de/semantic-technologies#Teacher"/>
+        <teaches rdf:resource="http://uni-trier.de/semantic-technologies#SemanticTechnologies"/>
+        <rdfs:label>Ralph Bergmann</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#SemanticTechnologies -->
+
+    <owl:NamedIndividual rdf:about="http://uni-trier.de/semantic-technologies#SemanticTechnologies">
+        <rdf:type rdf:resource="http://uni-trier.de/semantic-technologies#Lecture"/>
+        <isTaughtBy rdf:resource="http://uni-trier.de/semantic-technologies#RalphBergmann"/>
+        <rdfs:label>Semantic Technologies</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uni-trier.de/semantic-technologies#Trier_University -->
+
+    <owl:NamedIndividual rdf:about="http://uni-trier.de/semantic-technologies#Trier_University">
+        <rdf:type rdf:resource="http://uni-trier.de/semantic-technologies#University"/>
+        <employs rdf:resource="http://uni-trier.de/semantic-technologies#RalphBergmann"/>
+        <isGovernmentAffiliated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isGovernmentAffiliated>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
